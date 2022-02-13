@@ -12,7 +12,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -66,9 +66,10 @@
                                     <constraint firstAttribute="width" constant="193" id="5R7-8m-SUL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <action selector="descriptionEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="w9S-Dk-qHb"/>
+                                    <action selector="descriptionEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="PeX-Yc-z82"/>
+                                    <action selector="editEnded:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="lIf-s5-6dV"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="2GX-kX-8bk">
@@ -82,7 +83,7 @@
                                     <action selector="quantityEntered:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="cG0-iE-Pjv"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Items" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvr-VX-M2m">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="30" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvr-VX-M2m">
                                 <rect key="frame" x="16" y="260.66666666666669" width="358" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -114,9 +115,14 @@
                             <constraint firstItem="rvr-VX-M2m" firstAttribute="leading" secondItem="jdt-Vm-YPh" secondAttribute="leading" id="nAD-ky-JKG"/>
                             <constraint firstItem="sTI-cR-3mt" firstAttribute="top" secondItem="jdt-Vm-YPh" secondAttribute="bottom" constant="28" id="oOu-bP-wgB"/>
                         </constraints>
+                        <connections>
+                            <action selector="numericalEditEnded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ej8-ch-PGi"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="descriptionField" destination="90W-0c-gId" id="DtZ-L5-D7R"/>
                         <outlet property="itemsView" destination="rvr-VX-M2m" id="34n-kr-Ihr"/>
+                        <outlet property="quantityField" destination="2GX-kX-8bk" id="m9B-bf-BSq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
